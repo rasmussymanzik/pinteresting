@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+<h2>Zieh dir die Pins rein</h2>
+	</div>
+
+<div class="panel-body">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Beschreibung</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.description %></td>
+        <td><%= link_to 'Show', pin, class:"btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_pin_path(pin), class:"btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="panel-footer">
+<%= link_to 'Neuer Pin', new_pin_path, class:"btn btn-primary" %>
+</div>
+</div>
